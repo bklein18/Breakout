@@ -174,6 +174,7 @@ public class Breakout extends GraphicsProgram {
 				lives --;
 				GLabel lose = new GLabel("You lost, try again. Lives Remaining: " + lives + ". Click to Start.", APPLICATION_WIDTH / 6, PADDLE_Y_OFFSET);
 				add(lose);
+				vy = 3;
 				if(lives == 0) {
 					break;
 				}
@@ -202,8 +203,11 @@ public class Breakout extends GraphicsProgram {
 			// set to 60 frames per second
 			pause(1000/60);
 			// change y velocity to make sure it doesn't get too slow
-			if(vy < 1.0 && vy > 0) {
-				vy = 1.0;
+			if(vy < 2.0 && vy > 0) {
+				vy = 2.0;
+			}
+			if(vy >= 6.0) {
+				vy = 6.0;
 			}
 			if(vy < 0 && vy > -1.0) {
 				vy = -1.0;
