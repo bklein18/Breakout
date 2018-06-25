@@ -212,6 +212,12 @@ public class Breakout extends GraphicsProgram {
 			if(vy < 0 && vy > -1.0) {
 				vy = -1.0;
 			}
+			if(vx < 0.5 && vx > 0) {
+				vx = 0.5;
+			}
+			if(vx < 0 && vx > -0.5) {
+				vx = -0.5;
+			}
 		}
 		removeAll();
 		// win
